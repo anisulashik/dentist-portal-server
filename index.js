@@ -108,7 +108,7 @@ try{
         const bookedSlots = serviceBookings.map(book => book.slot);
         // step 6: select those slots that are not in bookedSlots
         const available = service.slots.filter(slot => !bookedSlots.includes(slot));
-        //step 7: set available to slots to make it easier 
+        //step 7: set available to slots 
         service.slots = available;
       });
 
@@ -124,6 +124,7 @@ try{
      * app.patch('/booking/:id) //
      * app.put('/booking/:id') // upsert ==> update (if exists) or insert (if doesn't exist)
      * app.delete('/booking/:id) // doctorCollection
+     * those are the basic steps
     */
 
      app.get('/doctors', async(req,res)=>{
